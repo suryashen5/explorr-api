@@ -11,5 +11,5 @@ class Schedule extends Model
 
     protected $fillable = [
         'hotel_id', 'schedule_code', 'date_started', 'date_ended', 'status_stayed', 'room_id'
-    ]
+    ];
 }

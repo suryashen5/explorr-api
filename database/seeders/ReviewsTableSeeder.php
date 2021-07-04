@@ -17,8 +17,8 @@ class ReviewsTableSeeder extends Seeder
         $faker = Faker::create();
     	foreach (range(1,10) as $index) {
             DB::table('reviews')->insert([
-                'user_id' => $faker->randomChoice(['11205','12345','12312',]),
-                'hotel_id' => $faker->randomChoice([
+                'user_id' => $faker->randomElement(['11205','12345','12312',]),
+                'hotel_id' => $faker->randomElement([
                     "12345678",
                     "91011121",
                     "31415161",

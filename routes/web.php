@@ -20,6 +20,7 @@ $router->get('/', function () use ($router) {
 });
 
 $router->group(['middleware' => 'auth', 'prefix' => 'api'], function ($router) {
+    $router->get('hotel/{id}', 'HotelController@getHotelDetailsById');
 });
 
 $router->group(['prefix' => 'api'], function () use ($router) {

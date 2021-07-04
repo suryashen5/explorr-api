@@ -26,11 +26,6 @@ class FacilitiesTableSeeder extends Seeder
                 'name'=> $faker->randomElement([
                     'Wifi', 'Restaurant', 'Parking', 'Pool', 'Television'
                 ]),
-                'icon'=> $faker->randomElement([
-                    'random.png',
-                    'random1.png',
-                    'random2.png',
-                ]),
             ]);
         }
     }

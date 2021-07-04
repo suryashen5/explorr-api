@@ -16,13 +16,13 @@ class RoomsTableSeeder extends Seeder
     {
         $faker = Faker::create();
     	foreach (range(1,10) as $index) {
-            DB::table('hotels')->insert([
-                'hotel_id' => $faker->randomChoice([
+            DB::table('rooms')->insert([
+                'hotel_id' => $faker->randomElement([
                     "12345678",
                     "91011121",
                     "31415161",
                 ]),
-                'name' => $faker->randomChoice([
+                'name' => $faker->randomElement([
                     "Single Deluxe", "Double Deluxe",
                     "Triple Deluxe", "Fourth Deluxe",
                     "Fifth Deluxe"

@@ -26,6 +26,9 @@ class HashtagsTableSeeder extends Seeder
                 'name'=> $faker->randomElement([
                     'Night View', 'Nature', 'Japan'
                 ]),
+                'code'=> $faker->randomElement([
+                    "nightview", "nature", 'japan'
+                ]),
             ]);
         }
     }

@@ -11,5 +11,5 @@ class Booking extends Model
 
     protected $fillable = [
         'user_id', 'schedule_code', 'date_transaction', 'payment_status'
-    ]
+    ];
 }

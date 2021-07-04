@@ -22,7 +22,7 @@ class HotelHashtagListsTableSeeder extends Seeder
                         'bceb8818-f7a8-47f3-8b4c-4ad5f16d092f',
                         'f1ea7d64-7487-47df-8b46-ff995cfeaef2',
                     ]),
-                'hashtag_list_id' => $faker->randomElement([
+                'hashtag_id' => $faker->randomElement([
                         '6698',
                         '7788',
                         '9023',

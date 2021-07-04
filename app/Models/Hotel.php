@@ -11,5 +11,5 @@ class Hotel extends Model
 
     protected $fillable = [
         'name', 'address', 'description', 'price_per_night', 'location', 'facility_list_id', 'hashtag_list_id', 'category_id'
-    ]
+    ];
 }
