@@ -14,4 +14,9 @@ class Review extends Model
     protected $fillable = [
         'user_id', 'hotel_id', 'rating', 'description'
     ];
+
+    public function users()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

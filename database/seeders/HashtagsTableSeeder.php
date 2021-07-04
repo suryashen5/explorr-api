@@ -31,8 +31,12 @@ class HashtagsTableSeeder extends Seeder
     	foreach (range(0,4) as $index) {
             DB::table('hashtags')->insert([
                 'id'=> $hashtags[$index],
-                'name'=> $name[$index],
-                'code'=> $code[$index],
+                'name'=> $faker->randomElement([
+                    'Night View', 'Nature', 'Japan'
+                ]),
+                'code'=> $faker->randomElement([
+                    "nightview", "nature", 'japan'
+                ]),
             ]);
         }
     }
