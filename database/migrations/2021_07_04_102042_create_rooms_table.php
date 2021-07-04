@@ -15,7 +15,7 @@ class CreateRoomsTable extends Migration
     {
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
-            $table->foreign('hotel_id')->references('id')->on('hotels')
+            $table->unsignedBigInteger('hotel_id')->foreign('hotel_id')->references('id')->on('hotels')
             ->onDelete('cascade');
             $table->string('name');
             $table->integer('price');

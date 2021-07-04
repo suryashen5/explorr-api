@@ -15,16 +15,16 @@ class CreateSchedulesTable extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
-            $table->foreign('hotel_id')
+            $table->unsignedBigInteger('hotel_id')->foreign('hotel_id')
             ->references('id')->on('hotels')
             ->onDelete('cascade');
-            $table->foreign('schedule_code')
+            $table->uuid('schedule_code')->foreign('schedule_code')
             ->references('schedule_code')->on('schedules')
             ->onDelete('cascade');
             $table->dateTime('date_started');
             $table->dateTime('date_ended');
             $table->boolean('status_stayed');
-            $table->foreign('room_id')
+            $table->unsignedBigInteger('room_id')->foreign('room_id')
             ->references('id')->on('rooms')
             ->onDelete('cascade');
         });

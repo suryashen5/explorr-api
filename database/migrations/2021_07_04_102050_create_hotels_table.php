@@ -20,11 +20,11 @@ class CreateHotelsTable extends Migration
             $table->string('description');
             $table->integer('price_per_night');
             $table->string('location');
-            $table->foreign('facility_list_id')
+            $table->unsignedBigInteger('facility_list_id')->foreign('facility_list_id')
             ->reference('facility_list_id')->on('hotel_facility_list');
-            $table->foreign('hashtag_list_id')
+            $table->unsignedBigInteger('hashtag_list_id')->foreign('hashtag_list_id')
             ->reference('hashtag_list_id')->on('hotel_hashtag_list');
-            $table->foreign('category_id')
+            $table->unsignedBigInteger('category_id')->foreign('category_id')
             ->reference('id')->on('categorys');
         });
     }

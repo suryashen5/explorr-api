@@ -15,7 +15,7 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->foreign('user_id')
+            $table->unsignedBigInteger('user_id')->foreign('user_id')
             ->references('id')->on('users')
             ->onDelete('cascade');
             $table->string('schedule_code');
