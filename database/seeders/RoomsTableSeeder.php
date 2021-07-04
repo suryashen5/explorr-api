@@ -18,9 +18,16 @@ class RoomsTableSeeder extends Seeder
     	foreach (range(1,10) as $index) {
             DB::table('rooms')->insert([
                 'hotel_id' => $faker->randomElement([
+                    "09320102",
+                    "12309582",
+                    "39028575",
                     "12345678",
                     "91011121",
                     "31415161",
+                    "59203123",
+                    "12375392",
+                    "09319380",
+                    "12398571",
                 ]),
                 'name' => $faker->randomElement([
                     "Single Deluxe", "Double Deluxe",

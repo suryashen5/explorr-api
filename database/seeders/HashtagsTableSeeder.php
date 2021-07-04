@@ -19,16 +19,20 @@ class HashtagsTableSeeder extends Seeder
             '6698',
             '7788',
             '9023',
+            '9238',
+            '0932',
         ];
-    	foreach (range(0,2) as $index) {
+        $name = [
+            'Night View', 'Nature', 'Japan', 'Hotel', 'Wooden'
+        ];
+        $code = [
+            "nightview", "nature", 'japan', 'hotel', 'wooden'
+        ];
+    	foreach (range(0,4) as $index) {
             DB::table('hashtags')->insert([
                 'id'=> $hashtags[$index],
-                'name'=> $faker->randomElement([
-                    'Night View', 'Nature', 'Japan'
-                ]),
-                'code'=> $faker->randomElement([
-                    "nightview", "nature", 'japan'
-                ]),
+                'name'=> $name[$index],
+                'code'=> $code[$index],
             ]);
         }
     }

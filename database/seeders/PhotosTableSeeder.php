@@ -15,12 +15,19 @@ class PhotosTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-    	foreach (range(1,10) as $index) {
+    	foreach (range(1,30) as $index) {
             DB::table('photos')->insert([
                 'hotel_id' => $faker->randomElement([
+                    "09320102",
+                    "12309582",
+                    "39028575",
                     "12345678",
                     "91011121",
                     "31415161",
+                    "59203123",
+                    "12375392",
+                    "09319380",
+                    "12398571",
                 ]),
                 'name' => $faker->name,
                 'path' => $faker->randomElement([
