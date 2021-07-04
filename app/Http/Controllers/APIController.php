@@ -14,7 +14,9 @@ class APIController extends Controller
     {
         $code = $request->get('code');
         
-        $hashtags = DB::table('hashtags')->join('hotel_hashtag_lists','hashtags.id','=','hotel_hashtag_lists.hashtag_id')->select(DB::raw("COUNT(*), hotel_hashtag_lists.hashtag_list_id, hashtags.id, hashtags.name, hashtags.code"))->groupBy("hashtags.id")->orderByDesc('COUNT(*)')->get();
+        $hashtags = DB::table('hashtags')->join('hotel_hashtag_lists','hashtags.id','=','hotel_hashtag_lists.hashtag_id')
+        ->select(DB::raw("COUNT(*) as count, hotel_hashtag_lists.hashtag_list_id, hashtags.id, hashtags.name, hashtags.code"))
+        ->groupBy("hashtags.id, hotel_hashtag_lists.hashtag_list_id")->orderByDesc('count')->get();
         
         $temp_hashtags = [];
         foreach($hashtags as $hashtag => $tag){
@@ -74,5 +76,9 @@ class APIController extends Controller
         }
         $result->hotel_list = $hotels;
         return response()->json($result);
+    }
+
+    public function test(){
+        return Hotel::all();
     }
 }
