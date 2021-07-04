@@ -15,13 +15,17 @@ class CreateRoomsTable extends Migration
     {
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('hotel_id')->foreign('hotel_id')->references('id')->on('hotels')
-            ->onDelete('cascade');
+            $table->unsignedBigInteger('hotel_id');
             $table->string('name');
             $table->integer('price');
             $table->integer('slot');
             $table->integer('pax');
             $table->integer('bed');
+
+            // Foreign key
+            $table->foreign('hotel_id')->references('id')->on('hotels');
+
+            $table->timestamps();
         });
     }
 
