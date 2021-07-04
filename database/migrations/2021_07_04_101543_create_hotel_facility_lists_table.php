@@ -15,9 +15,11 @@ class CreateHotelFacilityListsTable extends Migration
     {
         Schema::create('hotel_facility_lists', function (Blueprint $table) {
             $table->id();
-            $table->uuid('facility_list_id')->unique();
+            $table->uuid('facility_list_id');
             $table->unsignedBigInteger('facility_id');
 
+            // Foreign key
+            $table->foreign('facility_list_id')->references('facility_list_id')->on('hotels');
             $table->foreign('facility_id')->references('id')->on('facilities');
 
             $table->timestamps();

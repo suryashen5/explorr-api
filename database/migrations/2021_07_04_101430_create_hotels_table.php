@@ -18,16 +18,9 @@ class CreateHotelsTable extends Migration
             $table->string('name');
             $table->string('address');
             $table->text('description');
-            $table->integer('price_per_night');
             $table->string('location');
-            $table->uuid('facility_list_id');
-            $table->uuid('hashtag_list_id');
-            $table->unsignedBigInteger('category_id');
-
-            // Foreign key
-            $table->foreign('facility_list_id')->references('facility_list_id')->on('hotel_facility_lists');
-            $table->foreign('hashtag_list_id')->references('hashtag_list_id')->on('hotel_hashtag_lists');
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->uuid('facility_list_id')->unique();
+            $table->uuid('hashtag_list_id')->unique();
 
             $table->timestamps();
         });

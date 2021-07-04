@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Room extends Model
+class Hashtag extends Model
 {
-    protected $table = 'rooms';
+    protected $table = 'hashtags';
     public $primaryKey = 'id';
 
     protected $fillable = [
-        'hotel_id', 'name', 'price', 'slot', 'pax', 'bed'
+        'name', 'code'
     ];
 }
