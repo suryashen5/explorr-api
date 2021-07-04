@@ -15,7 +15,7 @@ class HotelHashtagListsTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-    	foreach (range(1,10) as $index) {
+    	foreach (range(1,30) as $index) {
             DB::table('hotel_hashtag_lists')->insert([
                 'hashtag_list_id' => $faker->randomElement([
                     '186aba28-6706-47ed-bed3-100ecd6058f4',
