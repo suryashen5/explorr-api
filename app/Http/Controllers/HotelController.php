@@ -28,8 +28,6 @@ class HotelController extends Controller
         $rooms = Room::where('hotel_id', $hotel->id)->get();
         $reviews = Review::where('hotel_id', $hotel->id)->get();
 
-        dd($hotel_facility_lists);
-
         $hotel_facility_list = array();
         foreach ($hotel_facility_lists as $list) {
             array_push($hotel_facility_list, array('id' => $list->facilities->id, 'name' => $list->facilities->name));
