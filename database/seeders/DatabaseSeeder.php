@@ -13,6 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call('UsersTableSeeder');
+        $this->call([HashtagSeeder::class, FacilitySeeder::class, HotelSeeder::class, HotelHashtagListSeeder::class, HotelFacilityListSeeder::class]);
     }
 }
