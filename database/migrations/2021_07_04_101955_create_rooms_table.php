@@ -23,7 +23,7 @@ class CreateRoomsTable extends Migration
             $table->integer('bed');
 
             // Foreign key
-            $table->foreign('facility_list_id')->references('facility_list_id')->on('facilities');
+            $table->foreign('hotel_id')->references('id')->on('hotels');
 
             $table->timestamps();
         });

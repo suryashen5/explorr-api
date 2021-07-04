@@ -20,8 +20,8 @@ class CreateHotelsTable extends Migration
             $table->text('description');
             $table->integer('price_per_night');
             $table->string('location');
-            $table->unsignedBigInteger('facility_list_id');
-            $table->unsignedBigInteger('hashtag_list_id');
+            $table->uuid('facility_list_id');
+            $table->uuid('hashtag_list_id');
             $table->unsignedBigInteger('category_id');
 
             // Foreign key

@@ -15,7 +15,7 @@ class CreateHotelHashtagListsTable extends Migration
     {
         Schema::create('hotel_hashtag_lists', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('hashtag_list_id');
+            $table->uuid('hashtag_list_id')->unique();
             $table->unsignedBigInteger('hashtag_id');
 
             $table->foreign('hashtag_id')->references('id')->on('hashtags');
